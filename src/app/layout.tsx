@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Lato, Dancing_Script, La_Belle_Aurore } from "next/font/google";
+import {
+  Lato,
+  Dancing_Script,
+  La_Belle_Aurore,
+  Outfit,
+} from "next/font/google";
 import localFont from "next/font/local";
 
 const snowtimes = localFont({
@@ -29,6 +34,12 @@ const lato = Lato({
   display: "swap",
   variable: "--font-lato",
   weight: "400",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-outfit",
 });
 
 const BASE_URI = "https://bemybae.vercel.app";
@@ -72,8 +83,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png"
+      />
+      <link rel="manifest" href="/site.webmanifest" />
       <body
-        className={`${d_script.variable} ${la_belle.variable} ${lato.variable} ${snowtimes.variable}`}>
+        className={`${d_script.variable} ${la_belle.variable} ${lato.variable} ${snowtimes.variable} ${outfit.variable}`}>
         {children}
       </body>
     </html>

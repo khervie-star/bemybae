@@ -18,6 +18,7 @@ const config: Config = {
         la_belle: ["var(--font-la_belle)"],
         d_script: ["var(--font-d_script)"],
         snowtimes: ["var(--font-snowtimes)"],
+        outfit: ["var(--font-outfit)"],
       },
     },
   },
