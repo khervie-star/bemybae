@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
 import { Lato, Dancing_Script, La_Belle_Aurore } from "next/font/google";
+import localFont from "next/font/local";
+
+const snowtimes = localFont({
+  src: "../../public/fonts/snowtimes-cufonfonts/SnowtimesRegular-eZXlp.ttf",
+  display: "swap",
+  variable: "--font-snowtimes",
+});
+
 import "./globals.css";
 import "../styles/falling-petals.styles.css";
 
@@ -65,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${d_script.variable} ${la_belle.variable} ${lato.variable}`}>
+        className={`${d_script.variable} ${la_belle.variable} ${lato.variable} ${snowtimes.variable}`}>
         {children}
       </body>
     </html>

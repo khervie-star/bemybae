@@ -9,7 +9,7 @@ export default function Home() {
           <h1 className="text-[20px] lg:text-[28px] font-bold text-gray-900 mb-8 font-lato text-center">
             Heyy Angelface, 🥺🥺🥺🥺
           </h1>
-          <p className="text-[40px] text-[#A50104] lg:text-[70px] font-semibold font-la_belle text-center">
+          <p className="text-[40px] text-pink-600 lg:text-[70px] font-semibold font-snowtimes text-center">
             Will you be my valentine? 🌸🩷
           </p>
         </div>

@@ -17,6 +17,7 @@ const config: Config = {
         lato: ["var(--font-lato)"],
         la_belle: ["var(--font-la_belle)"],
         d_script: ["var(--font-d_script)"],
+        snowtimes: ["var(--font-snowtimes)"],
       },
     },
   },
