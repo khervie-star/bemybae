@@ -23,7 +23,7 @@ const lato = Lato({
   weight: "400",
 });
 
-const BASE_URI = "https://be_my_bae_momo_.vercel.app";
+const BASE_URI = "https://bemybae.vercel.app";
 
 export const metadata: Metadata = {
   alternates: {
