@@ -89,10 +89,10 @@ export default function Home() {
     <main className="flex w-full h-screen p-5 lg:p-8 bg-[#f8c8dc] overflow-hidden fixed">
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-full lg:max-w-[800px]">
-          <h1 className="text-[24px] lg:text-[32px] font-bold text-gray-700 mb-8 font-snowtimes text-center animate__animated animate_fadeInUp">
+          <h1 className="text-[24px] lg:text-[32px] font-bold text-gray-700 mb-8 font-snowtimes text-center animate__animated animate__fadeInUp">
             Heyy Angelface, 🥺🥺🥺🥺
           </h1>
-          <p className="text-[45px] text-pink-600 lg:text-[75px] font-semibold font-snowtimes text-center">
+          <p className="text-[45px] text-pink-600 lg:text-[75px] font-semibold font-snowtimes text-center animate__animated animate__fadeInUp">
             Will you be my valentine? 🌸🩷
           </p>
           <div className="animation">
