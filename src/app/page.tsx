@@ -103,7 +103,7 @@ export default function Home() {
       .catch((err) => console.log(err));
   };
   return (
-    <main className="flex w-full min-h-screen p-5 lg:p-8 bg-[#f8c8dc] overflow-x-hidden">
+    <main className="flex w-full h-screen min-h-screen p-5 lg:p-8 bg-[#f8c8dc] overflow-x-hidden">
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-full lg:max-w-[800px]">
           <FallingPetals />
