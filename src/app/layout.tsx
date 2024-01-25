@@ -16,6 +16,7 @@ const snowtimes = localFont({
 
 import "./globals.css";
 import "../styles/falling-petals.styles.css";
+import { FallingPetals } from "../components";
 
 const d_script = Dancing_Script({
   subsets: ["latin"],

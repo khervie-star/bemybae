@@ -8,6 +8,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  /* --animate-duration: 800ms;
+  --animate-delay: 0.9s; */
 }
 
 body {
@@ -20,12 +22,6 @@ body {
   }
 }
 
-body {
-  background-color: #111;
-  font-family: Signika Negative, Asap, sans-serif;
-  color: white;
-  overflow: hidden;
-}
 .dot {
   width: 35px;
   height: 35px;

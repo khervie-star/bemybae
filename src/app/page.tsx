@@ -8,9 +8,13 @@ import bunnyCry from "../../public/animations/bunnyCry.json";
 import bunnyPlease from "../../public/animations/bunnyPlease.json";
 import bunnyYes from "../../public/animations/bunnyYes.json";
 import bunnyPunch from "../../public/animations/bunnyPunch.json";
+import love from "../../public/animations/love.json";
+
 import axios from "axios";
 import { AnimatePresence, motion } from "framer-motion";
 import { SplitText } from "../components";
+
+import ConfettiExplosion from "react-confetti-explosion";
 
 const getRandomPosition = () => {
   if (typeof window !== "undefined") {
@@ -31,6 +35,7 @@ export default function Home() {
   const [hovered, setHovered] = useState(false);
   const [randomPosition, setRandomPosition] = useState(getRandomPosition());
   const [hasStarted, setHasStarted] = useState(false);
+  const [isExploding, setIsExploding] = useState(false);
 
   const bunnyCryOptions = {
     loop: true,
@@ -65,6 +70,15 @@ export default function Home() {
     },
   };
 
+  const loveOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: love,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   const handleHover = (hoverState: boolean) => {
     setHasStarted(true);
     if (hoverState === true) {
@@ -80,6 +94,7 @@ export default function Home() {
 
   const handleYesClick = () => {
     setBunnyState("yes");
+    setIsExploding(true);
     axios
       .post("https://formspree.io/f/mrgnekdw", {
         status: "She said Yessss",
@@ -88,16 +103,17 @@ export default function Home() {
       .catch((err) => console.log(err));
   };
   return (
-    <main className="flex w-full min-h-screen p-5 lg:p-8 bg-[#f8c8dc] overflow-x-hidden fixed">
+    <main className="flex w-full min-h-screen p-5 lg:p-8 bg-[#f8c8dc] overflow-x-hidden">
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-full lg:max-w-[800px]">
+          <FallingPetals />
           <h1 className="text-[24px] lg:text-[32px] font-bold text-gray-700 mb-8 font-snowtimes text-center animate__animated animate__fadeInDown">
             Heyy Angelface, 🥺🥺🥺🥺
           </h1>
-          <p className="text-[45px] text-pink-600 lg:text-[75px] font-semibold font-snowtimes text-center animate__animated animate__fadeInUp">
+          <p className="text-[45px] text-pink-600 lg:text-[75px] font-semibold font-snowtimes text-center animate__animated animate__fadeInUp animate__delay-3s">
             Will you be my valentine? 🌸🩷
           </p>
-          <AnimatePresence>
+          {/* <AnimatePresence>
             <motion.div
               initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
@@ -117,23 +133,23 @@ export default function Home() {
                 Will you be my valentine? 🌸🩷
               </SplitText>
             </motion.div>
-          </AnimatePresence>
-          <div className="animation">
+          </AnimatePresence> */}
+          <div className="animation animate__animated animate__zoomIn animate__delay-3s">
             {bunnyState === "normal" && (
-              <Lottie options={bunnyPleaseOptions} height={300} width={300} />
+              <Lottie options={bunnyPleaseOptions} height={250} width={250} />
             )}
             {bunnyState === "cry" && (
               <Lottie options={bunnyCryOptions} height={300} width={300} />
             )}
             {bunnyState === "yes" && (
-              <Lottie options={bunnyYesOptions} height={400} width={400} />
+              <Lottie options={loveOptions} height={300} width={300} />
             )}
             {bunnyState === "punch" && (
               <Lottie options={bunnyPunchOptions} height={300} width={300} />
             )}
           </div>
           {bunnyState !== "yes" && (
-            <div className="mt-[40px] w-full flex items-center justify-center gap-6 lg:gap-8">
+            <div className="mt-[40px] w-full flex items-center justify-center gap-6 lg:gap-8  animate__animated animate__delay-4s animate__slideInUp">
               <button
                 className="bg-gradient-to-tr from-pink-600 to-rose-500 text-white shadow-lg px-8 py-2 font-outfit font-medium rounded-full text-[14px] lg:text-base"
                 onMouseEnter={() => setBunnyState("normal")}
@@ -161,7 +177,7 @@ export default function Home() {
           )}
         </div>
       </div>
-      {/* <FallingPetals /> */}
+      {isExploding && <ConfettiExplosion />}
     </main>
   );
 }
