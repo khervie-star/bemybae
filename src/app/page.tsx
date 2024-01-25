@@ -110,7 +110,7 @@ export default function Home() {
           <h1 className="text-[24px] lg:text-[32px] font-bold text-gray-700 mb-8 font-snowtimes text-center animate__animated animate__fadeInDown">
             Heyy Angelface, 🥺🥺🥺🥺
           </h1>
-          <p className="text-[45px] text-pink-600 lg:text-[75px] font-semibold font-snowtimes text-center animate__animated animate__fadeInUp animate__delay-3s">
+          <p className="text-[45px] text-pink-600 lg:text-[75px] font-semibold font-snowtimes text-center animate__animated animate__fadeInUp animate__delay-1s">
             Will you be my valentine? 🌸🩷
           </p>
           {/* <AnimatePresence>
@@ -134,7 +134,7 @@ export default function Home() {
               </SplitText>
             </motion.div>
           </AnimatePresence> */}
-          <div className="animation animate__animated animate__zoomIn animate__delay-3s">
+          <div className="animation animate__animated animate__zoomIn animate__delay-2s">
             {bunnyState === "normal" && (
               <Lottie options={bunnyPleaseOptions} height={250} width={250} />
             )}
@@ -149,7 +149,7 @@ export default function Home() {
             )}
           </div>
           {bunnyState !== "yes" && (
-            <div className="mt-[40px] w-full flex items-center justify-center gap-6 lg:gap-8  animate__animated animate__delay-4s animate__slideInUp">
+            <div className="mt-[40px] w-full flex items-center justify-center gap-6 lg:gap-8  animate__animated animate__delay-3s animate__slideInUp">
               <button
                 className="bg-gradient-to-tr from-pink-600 to-rose-500 text-white shadow-lg px-8 py-2 font-outfit font-medium rounded-full text-[14px] lg:text-base"
                 onMouseEnter={() => setBunnyState("normal")}
