@@ -6,6 +6,7 @@ import {
   Outfit,
 } from "next/font/google";
 import localFont from "next/font/local";
+import "animate.css";
 
 const snowtimes = localFont({
   src: "../../public/fonts/snowtimes-cufonfonts/SnowtimesRegular-eZXlp.ttf",
