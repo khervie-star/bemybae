@@ -172,7 +172,7 @@ export default function Home() {
           )}
           {bunnyState == "yes" && (
             <div className="mt-[40px] w-full flex items-center justify-center text-center gap-6 lg:gap-8 text-pink-600 font-snowtimes text-[32px] font-bold ">
-              Yaaaaaaay!!! You make me so happy babe 🥺🌸🩷🌸🩷🌸🩷
+              Yaaaaaaay!!! 🥺🌸🩷🌸🩷🌸🩷
             </div>
           )}
         </div>
