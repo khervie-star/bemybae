@@ -9,6 +9,8 @@ import bunnyPlease from "../../public/animations/bunnyPlease.json";
 import bunnyYes from "../../public/animations/bunnyYes.json";
 import bunnyPunch from "../../public/animations/bunnyPunch.json";
 import axios from "axios";
+import { AnimatePresence, motion } from "framer-motion";
+import { SplitText } from "../components";
 
 const getRandomPosition = () => {
   if (typeof window !== "undefined") {
@@ -95,6 +97,27 @@ export default function Home() {
           <p className="text-[45px] text-pink-600 lg:text-[75px] font-semibold font-snowtimes text-center animate__animated animate__fadeInUp">
             Will you be my valentine? 🌸🩷
           </p>
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="text-center">
+              <SplitText
+                initial={{ y: "100%" }}
+                animate="visible"
+                variants={{
+                  visible: (i: number) => ({
+                    y: 0,
+                    transition: {
+                      delay: i * 0.1,
+                    },
+                  }),
+                }}>
+                Will you be my valentine? 🌸🩷
+              </SplitText>
+            </motion.div>
+          </AnimatePresence>
           <div className="animation">
             {bunnyState === "normal" && (
               <Lottie options={bunnyPleaseOptions} height={300} width={300} />
@@ -132,7 +155,7 @@ export default function Home() {
             </div>
           )}
           {bunnyState == "yes" && (
-            <div className="mt-[40px] w-full flex items-center justify-center gap-6 lg:gap-8 text-pink-600 font-snowtimes text-[32px] font-bold ">
+            <div className="mt-[40px] w-full flex items-center justify-center text-center gap-6 lg:gap-8 text-pink-600 font-snowtimes text-[32px] font-bold ">
               Yaaaaaaay!!! You make me so happy babe 🥺🌸🩷🌸🩷🌸🩷
             </div>
           )}
