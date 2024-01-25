@@ -88,7 +88,7 @@ export default function Home() {
       .catch((err) => console.log(err));
   };
   return (
-    <main className="flex w-full h-screen p-5 lg:p-8 bg-[#f8c8dc] overflow-hidden fixed">
+    <main className="flex w-full min-h-screen p-5 lg:p-8 bg-[#f8c8dc] overflow-x-hidden fixed">
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-full lg:max-w-[800px]">
           <h1 className="text-[24px] lg:text-[32px] font-bold text-gray-700 mb-8 font-snowtimes text-center animate__animated animate__fadeInDown">
